@@ -1,0 +1,18 @@
+{
+  "name": "iss-location-bot",
+  "version": "0.1.0",
+  "license": "MIT",
+  "exports": "./bot.js",
+  "imports": {
+    "@fedify/botkit": "jsr:@fedify/botkit@^0.1.0-dev.30+a6be54e1",
+    "@fedify/fedify": "jsr:@fedify/fedify@^1.3.3",
+    "@std/dotenv": "jsr:@std/dotenv@^0.225.3"
+  },
+  "unstable": ["kv", "temporal", "cron"],
+  "tasks": {
+    "dev": "deno serve -A --watch bot.js"
+  },
+  "fmt": {
+    "singleQuote": true
+  }
+}
