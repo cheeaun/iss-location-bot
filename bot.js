@@ -58,7 +58,7 @@ bot.onMention = bot.onReply = async (session, msg) => {
   // if (msg.replyTarget != null) return;
   const actor = msg.actor;
   console.log('💬', actor, msg.text);
-  if (/(who|astronaut|crew|people)/.test(msg.text)) {
+  if (/(who|astronaut|crew|people)/i.test(msg.text)) {
     const data = await getPeopleInSpace();
     const astronauts = data.people
       .map(
