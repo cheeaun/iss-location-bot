@@ -55,7 +55,7 @@ async function getPeopleInSpace() {
 }
 
 bot.onMention = bot.onReply = async (session, msg) => {
-  if (msg.replyTarget != null) return;
+  // if (msg.replyTarget != null) return;
   const actor = msg.actor;
   console.log('💬', actor, msg.text);
   if (/(who|astronaut|crew|people)/.test(msg.text)) {
