@@ -54,7 +54,7 @@ async function getPeopleInSpace() {
   return await response.json();
 }
 
-bot.onMention = bot.onReply = async (session, msg) => {
+const replyPeople = async (session, msg) => {
   // if (msg.replyTarget != null) return;
   const actor = msg.actor;
   console.log('💬', actor, msg.text);
@@ -78,6 +78,12 @@ ${astronauts}`;
     );
   }
 };
+
+bot.onMention = async (session, msg) => {
+  if (msg.replyTarget != null) return;
+  await replyPeople(session, msg);
+};
+bot.onReply = replyPeople;
 
 async function getISSLocation() {
   const response = await fetch('http://api.open-notify.org/iss-now.json');
