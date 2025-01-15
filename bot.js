@@ -96,6 +96,8 @@ Deno.cron('Post ISS location', { hour: { every: 1 } }, () => {
       },
     );
   });
+}, {
+  backoffSchedule: [1000, 5000, 10000],
 });
 
 bot.federation.startQueue();
