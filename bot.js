@@ -57,7 +57,7 @@ async function getPeopleInSpace() {
 const replyPeople = async (session, msg) => {
   // if (msg.replyTarget != null) return;
   const actor = msg.actor;
-  console.log('💬', actor, msg.text);
+  console.log('💬', actor.url || actor.id, msg.text);
   if (/(who|astronaut|crew|people)/i.test(msg.text)) {
     const data = await getPeopleInSpace();
     const astronauts = data.people
