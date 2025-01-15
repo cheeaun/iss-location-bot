@@ -84,21 +84,26 @@ async function getISSLocation() {
   return await response.json();
 }
 
-Deno.cron('Post ISS location', { hour: { every: 1 } }, () => {
-  getISSLocation().then((data) => {
-    const { iss_position } = data;
-    const session = bot.getSession(SERVER_NAME);
-    console.log('🛰️', iss_position);
-    session.publish(
-      text`Latitude: ${iss_position.latitude}${'\n'}Longitude: ${iss_position.longitude}`,
-      {
-        language: LANG,
-      },
-    );
-  });
-}, {
-  backoffSchedule: [1000, 5000, 10000],
-});
+Deno.cron(
+  'Post ISS location',
+  { hour: { every: 1 } },
+  {
+    backoffSchedule: [1000, 5000, 10000],
+  },
+  () => {
+    getISSLocation().then((data) => {
+      const { iss_position } = data;
+      const session = bot.getSession(SERVER_NAME);
+      console.log('🛰️', iss_position);
+      session.publish(
+        text`Latitude: ${iss_position.latitude}${'\n'}Longitude: ${iss_position.longitude}`,
+        {
+          language: LANG,
+        },
+      );
+    });
+  },
+);
 
 bot.federation.startQueue();
 
