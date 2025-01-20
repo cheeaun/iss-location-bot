@@ -43,11 +43,11 @@ const bot = createBot({
   behindProxy: Deno.env.get('DENO_DEPLOYMENT_ID') == null,
 });
 
-bot.onFollow = async (session, follower) => {
-  await session.publish(text`Thanks for following me, ${follower}!`, {
-    visibility: 'direct',
-  });
-};
+// bot.onFollow = async (session, follower) => {
+//   await session.publish(text`Thanks for following me, ${follower}!`, {
+//     visibility: 'direct',
+//   });
+// };
 
 async function getPeopleInSpace() {
   const response = await fetch('http://api.open-notify.org/astros.json');
