@@ -20,7 +20,7 @@ const kv = await Deno.openKv();
 const bot = createBot({
   username: NAME,
   name: 'ISS Location Bot',
-  summary: text`Show the current location of the International Space Station.`,
+  summary: text`Periodically post the coordinates of the International Space Station. Still beta. Might stop working at some point. Inconvenience caused is regretted.`,
   // Icon from https://www.reddit.com/r/ISS/
   icon: new URL(
     'https://styles.redditmedia.com/t5_2uhsj/styles/communityIcon_ktlx4tgv4ek51.png',
