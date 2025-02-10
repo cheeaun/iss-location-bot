@@ -1,28 +1,31 @@
 {
   "version": "4",
   "specifiers": {
-    "jsr:@fedify/botkit@~0.1.0-dev.30+a6be54e1": "0.1.0-dev.30+a6be54e1",
-    "jsr:@fedify/fedify@^1.3.3": "1.3.4",
-    "jsr:@fedify/fedify@^1.3.4": "1.3.4",
+    "jsr:@david/which-runtime@~0.2.1": "0.2.1",
+    "jsr:@fedify/botkit@~0.2.0-dev.76+a714331d": "0.2.0-dev.76+a714331d",
+    "jsr:@fedify/fedify@^1.4.0": "1.4.0",
+    "jsr:@fedify/fedify@^1.5.0-dev.642+e84c3588": "1.5.0-dev.642+e84c3588",
+    "jsr:@fedify/markdown-it-hashtag@0.3": "0.3.0",
     "jsr:@fedify/markdown-it-mention@0.2": "0.2.0",
     "jsr:@hongminhee/x-forwarded-fetch@0.2": "0.2.0",
+    "jsr:@hono/hono@^4.6.18": "4.7.0",
     "jsr:@hugoalh/http-header-link@^1.0.2": "1.0.3",
     "jsr:@hugoalh/is-string-singleline@^1.0.4": "1.0.4",
-    "jsr:@logtape/logtape@0.8": "0.8.0",
-    "jsr:@std/async@^1.0.5": "1.0.9",
-    "jsr:@std/bytes@^1.0.2": "1.0.4",
+    "jsr:@logtape/logtape@0.8": "0.8.1",
+    "jsr:@logtape/logtape@~0.8.1": "0.8.1",
+    "jsr:@std/async@^1.0.5": "1.0.10",
+    "jsr:@std/bytes@^1.0.2": "1.0.5",
     "jsr:@std/dotenv@~0.225.3": "0.225.3",
-    "jsr:@std/encoding@^1.0.5": "1.0.6",
+    "jsr:@std/encoding@^1.0.5": "1.0.7",
     "jsr:@std/html@0.224": "0.224.2",
     "jsr:@std/html@^1.0.3": "1.0.3",
-    "jsr:@std/http@^1.0.6": "1.0.12",
+    "jsr:@std/http@^1.0.6": "1.0.13",
     "jsr:@std/semver@^1.0.3": "1.0.3",
     "jsr:@std/uuid@^1.0.4": "1.0.4",
     "npm:@opentelemetry/api@^1.9.0": "1.9.0",
     "npm:@opentelemetry/semantic-conventions@^1.27.0": "1.28.0",
     "npm:@phensley/language-tag@^1.9.0": "1.9.2",
     "npm:@phensley/language-tag@^1.9.2": "1.9.2",
-    "npm:@types/markdown-it@^14.1.1": "14.1.2",
     "npm:@types/node@*": "18.16.19",
     "npm:asn1js@^3.0.5": "3.0.5",
     "npm:json-canon@^1.0.1": "1.0.1",
@@ -36,12 +39,18 @@
     "npm:xss@^1.0.15": "1.0.15"
   },
   "jsr": {
-    "@fedify/botkit@0.1.0-dev.30+a6be54e1": {
-      "integrity": "8b78268b03de1a1d3a31f4e9c5cb9349054b240dd115df8d0218f259d5c0e5bf",
+    "@david/which-runtime@0.2.1": {
+      "integrity": "2a304e36b1122ebfe384d45de8fe0fb2bfe54a0a5a2a596efbfc81f54a47a62d"
+    },
+    "@fedify/botkit@0.2.0-dev.76+a714331d": {
+      "integrity": "2bbe9c22f6e6ee76fb38b8fc746063f37e25d79deba286dc3a56058e7d475378",
       "dependencies": [
-        "jsr:@fedify/fedify@^1.3.3",
+        "jsr:@fedify/fedify@^1.4.0",
+        "jsr:@fedify/markdown-it-hashtag",
         "jsr:@fedify/markdown-it-mention",
         "jsr:@hongminhee/x-forwarded-fetch",
+        "jsr:@hono/hono",
+        "jsr:@logtape/logtape@0.8",
         "jsr:@std/html@^1.0.3",
         "jsr:@std/uuid",
         "npm:@phensley/language-tag@^1.9.2",
@@ -53,7 +62,7 @@
       "integrity": "21a25abfdb239d696a9d8e6143558781eb6796329ae78799bf8532a8e42d75cb",
       "dependencies": [
         "jsr:@hugoalh/http-header-link",
-        "jsr:@logtape/logtape",
+        "jsr:@logtape/logtape@0.8",
         "jsr:@std/async",
         "jsr:@std/bytes",
         "jsr:@std/encoding",
@@ -72,11 +81,12 @@
         "npm:url-template"
       ]
     },
-    "@fedify/fedify@1.3.4": {
-      "integrity": "86802b3ce5f601147e593ace7411117c3d27e992b0d9d639fc45fbefd07bb6ff",
+    "@fedify/fedify@1.4.0": {
+      "integrity": "373fc64de06e782e1ae9f136ad73be6a1244ae12b0fcb2fbed5677735e3e71ee",
       "dependencies": [
+        "jsr:@david/which-runtime",
         "jsr:@hugoalh/http-header-link",
-        "jsr:@logtape/logtape",
+        "jsr:@logtape/logtape@~0.8.1",
         "jsr:@std/async",
         "jsr:@std/bytes",
         "jsr:@std/encoding",
@@ -93,17 +103,49 @@
         "npm:pkijs",
         "npm:uri-template-router",
         "npm:url-template"
+      ]
+    },
+    "@fedify/fedify@1.5.0-dev.642+e84c3588": {
+      "integrity": "1dbca2a80f8eb29bcaf6aa719d0ed9bc3efd21e6042ef4bc205598e5ced083d2",
+      "dependencies": [
+        "jsr:@david/which-runtime",
+        "jsr:@hugoalh/http-header-link",
+        "jsr:@logtape/logtape@~0.8.1",
+        "jsr:@std/async",
+        "jsr:@std/bytes",
+        "jsr:@std/encoding",
+        "jsr:@std/http",
+        "jsr:@std/semver",
+        "npm:@opentelemetry/api",
+        "npm:@opentelemetry/semantic-conventions",
+        "npm:@phensley/language-tag@^1.9.0",
+        "npm:asn1js",
+        "npm:json-canon",
+        "npm:jsonld",
+        "npm:multibase",
+        "npm:multicodec",
+        "npm:pkijs",
+        "npm:uri-template-router",
+        "npm:url-template"
+      ]
+    },
+    "@fedify/markdown-it-hashtag@0.3.0": {
+      "integrity": "0f4ebe15d0da2a1d1fe9ad74209811b6aa409e5cd1539b7934fc7ae5f7c88207",
+      "dependencies": [
+        "jsr:@std/html@0.224"
       ]
     },
     "@fedify/markdown-it-mention@0.2.0": {
       "integrity": "98706e8dfafb0ce45c781e2e7162400be4d9c71f80c5a1671d7209086b9ba6a3",
       "dependencies": [
-        "jsr:@std/html@0.224",
-        "npm:@types/markdown-it"
+        "jsr:@std/html@0.224"
       ]
     },
     "@hongminhee/x-forwarded-fetch@0.2.0": {
       "integrity": "8a347e061974e07b480e9461c7d84047e12e92c462fe7679a6f0f59b5c5f48d5"
+    },
+    "@hono/hono@4.7.0": {
+      "integrity": "1eb10e1976d3dda22ab43115ecfa348a43cd17c8aea5c0039c9757ebded624f8"
     },
     "@hugoalh/http-header-link@1.0.3": {
       "integrity": "3372096a73d755e3351f7fbd7155db7725874c2682a594a655580e3866563024",
@@ -114,20 +156,20 @@
     "@hugoalh/is-string-singleline@1.0.4": {
       "integrity": "b283396a7b1a1c9777c42560f657a5b13b0dee486282cce87f3c41a9e5796a66"
     },
-    "@logtape/logtape@0.8.0": {
-      "integrity": "12bdf406a713f754d99c2ff65deb45127ce4e2c59e7136d608042250629428bd"
+    "@logtape/logtape@0.8.1": {
+      "integrity": "deb3b276d4be0a697e94f6a79ddb309f993e1870166a6d43d8eca86cd00871a8"
     },
-    "@std/async@1.0.9": {
-      "integrity": "c6472fd0623b3f3daae023cdf7ca5535e1b721dfbf376562c0c12b3fb4867f91"
+    "@std/async@1.0.10": {
+      "integrity": "2ff1b1c7d33d1416159989b0f69e59ec7ee8cb58510df01e454def2108b3dbec"
     },
-    "@std/bytes@1.0.4": {
-      "integrity": "11a0debe522707c95c7b7ef89b478c13fb1583a7cfb9a85674cd2cc2e3a28abc"
+    "@std/bytes@1.0.5": {
+      "integrity": "4465dd739d7963d964c809202ebea6d5c6b8e3829ef25c6a224290fbb8a1021e"
     },
     "@std/dotenv@0.225.3": {
       "integrity": "a95e5b812c27b0854c52acbae215856d9cce9d4bbf774d938c51d212711e8d4a"
     },
-    "@std/encoding@1.0.6": {
-      "integrity": "ca87122c196e8831737d9547acf001766618e78cd8c33920776c7f5885546069"
+    "@std/encoding@1.0.7": {
+      "integrity": "f631247c1698fef289f2de9e2a33d571e46133b38d042905e3eac3715030a82d"
     },
     "@std/html@0.224.2": {
       "integrity": "2f7bfd71081fad988af9ce991750ed1574917dc8e6fae0e151987ea020d1e21a"
@@ -135,8 +177,8 @@
     "@std/html@1.0.3": {
       "integrity": "7a0ac35e050431fb49d44e61c8b8aac1ebd55937e0dc9ec6409aa4bab39a7988"
     },
-    "@std/http@1.0.12": {
-      "integrity": "85246d8bfe9c8e2538518725b158bdc31f616e0869255f4a8d9e3de919cab2aa"
+    "@std/http@1.0.13": {
+      "integrity": "d29618b982f7ae44380111f7e5b43da59b15db64101198bb5f77100d44eb1e1e"
     },
     "@std/semver@1.0.3": {
       "integrity": "7c139c6076a080eeaa4252c78b95ca5302818d7eafab0470d34cafd9930c13c8"
@@ -174,19 +216,6 @@
       "dependencies": [
         "tslib"
       ]
-    },
-    "@types/linkify-it@5.0.0": {
-      "integrity": "sha512-sVDA58zAw4eWAffKOaQH5/5j3XeayukzDk+ewSsnv3p4yJEZHCCzMDiZM8e0OUrRvmpGZ85jf4yDHkHsgBNr9Q=="
-    },
-    "@types/markdown-it@14.1.2": {
-      "integrity": "sha512-promo4eFwuiW+TfGxhi+0x3czqTYJkG8qB17ZUJiVF10Xm7NLVRSLUsfRTU/6h1e24VvRnXCx+hG7li58lkzog==",
-      "dependencies": [
-        "@types/linkify-it",
-        "@types/mdurl"
-      ]
-    },
-    "@types/mdurl@2.0.0": {
-      "integrity": "sha512-RGdgjQUZba5p6QEFAVx2OGb8rQDL/cPRG7GiedRzMcJ1tYnUANBncjbSB1NRGwbvjcPeikRABz2nshyPk1bhWg=="
     },
     "@types/node@18.16.19": {
       "integrity": "sha512-IXl7o+R9iti9eBW4Wg2hx1xQDig183jj7YLn8F7udNceyfkbn1ZxmzZXuak20gR40D7pIkIY1kYGx5VIGbaHKA=="
@@ -393,8 +422,8 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@fedify/botkit@~0.1.0-dev.30+a6be54e1",
-      "jsr:@fedify/fedify@^1.3.4",
+      "jsr:@fedify/botkit@~0.2.0-dev.76+a714331d",
+      "jsr:@fedify/fedify@^1.5.0-dev.642+e84c3588",
       "jsr:@std/dotenv@~0.225.3"
     ]
   }
