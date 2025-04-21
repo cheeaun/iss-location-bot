@@ -2,6 +2,7 @@ import '@std/dotenv/load';
 import { createBot, link, mention, parseSemVer, text } from '@fedify/botkit';
 import { mentions } from '@fedify/botkit/text';
 import { DenoKvMessageQueue, DenoKvStore } from '@fedify/fedify/x/denokv';
+import { Delete, PUBLIC_COLLECTION } from "@fedify/fedify/vocab";
 
 import metadata from './deno.json' with { type: 'json' };
 
@@ -108,6 +109,25 @@ Deno.cron(
         },
       );
     });
+  },
+);
+
+// Cron job to delete itself on Apr 30, 2025
+Deno.cron(
+  'Delete ISS location bot',
+  { minute: 0, hour: 0, dayOfMonth: 30, month: 4, year: 2025 },
+  async () => {
+    const session = bot.getSession(SERVER_NAME);
+    await session.context.sendActivity(
+      bot,
+      "followers",
+      new Delete({
+        to: PUBLIC_COLLECTION,
+        actor: session.context.getActorUri(bot.identifier),
+        object: session.context.getActorUri(bot.identifier),
+      }),
+      { preferSharedInbox: true }
+    );
   },
 );
 
